@@ -2616,14 +2616,14 @@ public class Launcher extends Activity
      */
     protected void onClickAllAppsButton(View v) {
         if (LOGD) Log.d(TAG, "onClickAllAppsButton");
-        if (isAllAppsVisible()) {
-            showWorkspace(true);
-        } else {
-            showAllApps(true, AppsCustomizePagedView.ContentType.Applications, false);
-        }
-        if (mLauncherCallbacks != null) {
-            mLauncherCallbacks.onClickAllAppsButton(v);
-        }
+//        if (isAllAppsVisible()) {
+//            showWorkspace(true);
+//        } else {
+//            showAllApps(true, AppsCustomizePagedView.ContentType.Applications, false);
+//        }
+//        if (mLauncherCallbacks != null) {
+//            mLauncherCallbacks.onClickAllAppsButton(v);
+//      }
     }
 
     private void showBrokenAppInstallDialog(final String packageName,
