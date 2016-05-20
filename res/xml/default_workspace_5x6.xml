@@ -42,4 +42,10 @@
         launcher:screen="3"
         launcher:x="1"
         launcher:y="2" />
+    <favorite
+        launcher:packageName="com.cyanogenmod.filemanager"
+        launcher:className="com.cyanogenmod.filemanager.activities.NavigationActivity"
+        launcher:screen="3"
+        launcher:x="0"
+        launcher:y="0" />
 </favorites>

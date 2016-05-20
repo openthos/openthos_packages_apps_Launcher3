@@ -56,6 +56,12 @@
         launcher:screen="3"
         launcher:x="2"
         launcher:y="3" />
+    <favorite
+        launcher:packageName="com.cyanogenmod.filemanager"
+        launcher:className="com.cyanogenmod.filemanager.activities.NavigationActivity"
+        launcher:screen="3"
+        launcher:x="0"
+        launcher:y="0" />
 
     <!-- Far-right screen [4] -->
 
