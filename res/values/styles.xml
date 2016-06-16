@@ -94,5 +94,20 @@
     <style name="PagedViewWidgetImageView">
         <item name="android:paddingLeft">@dimen/app_widget_preview_padding_left</item>
     </style>
-
+    <!--style for dialog content,umic-->
+    <style name="dialogContent">
+        <item name="android:textSize">8pt</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/dialog_cotent_stroke_default</item>
+    </style>
+    <style name="DialogWrapper">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/dialog_cotent_stroke_default</item>
+</style>
 </resources>

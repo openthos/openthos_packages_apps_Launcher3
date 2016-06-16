@@ -676,6 +676,16 @@ public class CellLayout extends ViewGroup {
     }
 
     @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getButtonState() == MotionEvent.BUTTON_SECONDARY) {
+            float[] point = new float[]{event.getRawX(), event.getRawY()};
+            ContextDialogFactory.newDesktopContextDialog(this.getContext(),this,point).show();
+            return true;
+        }
+        return super.onTouchEvent(event);
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         // First we clear the tag to ensure that on every touch down we start with a fresh slate,
         // even in the case where we return early. Not clearing here was causing bugs whereby on

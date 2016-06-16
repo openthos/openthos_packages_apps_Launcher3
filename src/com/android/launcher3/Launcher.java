@@ -651,6 +651,24 @@ public class Launcher extends Activity
         }
     }
 
+    public boolean showContextDialog(View v, MotionEvent event){
+        if (event.getButtonState() == MotionEvent.BUTTON_SECONDARY) {
+            float[] point = new float[]{event.getRawX(),event.getRawY()};
+            final ShortcutInfo info = (ShortcutInfo) v.getTag();
+            ComponentName componentName = info.getTargetComponent();
+            String packageName = componentName.getPackageName();
+            if(packageName.equals("com.cyanogenmod.filemanager")) {
+                ContextDialogFactory.newPCContextDialog(this, v, point).show();
+            } else if (packageName.equals("com.openthos.trash")) {//for trash interface
+                ContextDialogFactory.newTrashContextDialog(this, v, point).show();
+            } else {
+                ContextDialogFactory.newNormalContextDialog(this, v, point).show();
+            }
+            return true;
+        }
+        return false;
+    }
+
     public Stats getStats() {
         return mStats;
     }
@@ -1492,6 +1510,13 @@ public class Launcher extends Activity
         favorite.applyFromShortcutInfo(info, mIconCache, true);
         favorite.setOnClickListener(this);
         favorite.setOnFocusChangeListener(mFocusHandler);
+        favorite.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    boolean rs = showContextDialog(v,event);
+                    return rs;
+                }
+            });
         return favorite;
     }
 

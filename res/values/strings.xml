@@ -305,4 +305,22 @@ s -->
     <string name="abandoned_promise_explanation">The app for this icon isn\'t installed.
         You can remove it, or search for the app and install it manually.
     </string>
+    <!--string for dialog ,english,umic-->
+    <string name="dialog_open">Open</string>
+    <string name="dialog_about">About Computer</string>
+    <string name="dialog_empty">Empty</string>
+    <string name="dialog_open_with">Open_with</string>
+    <string name="dialog_compress">Compress</string>
+    <string name="dialog_uncompress">Uncompress</string>
+    <string name="dialog_cut">Cut</string>
+    <string name="dialog_copy">Copy</string>
+    <string name="dialog_delete">Delete</string>
+    <string name="dialog_rename">Rename</string>
+    <string name="dialog_property">property</string>
+    <string name="dialog_sort">Sort</string>
+    <string name="dialog_new_folder">new Folder</string>
+    <string name="dialog_dis_setting">Display Settings</string>
+    <string name="dialog_change_bgp">Change Background Picture</string>
+    <string name="dialog_paste">Paste</string>
+
 </resources>
