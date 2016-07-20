@@ -36,6 +36,7 @@
         launcher:y="0"
         launcher:spanX="2"
         launcher:spanY="2" />
+    <!--
     <favorite
         launcher:packageName="com.android.settings"
         launcher:className="com.android.settings.Settings"
@@ -47,5 +48,5 @@
         launcher:className="com.cyanogenmod.filemanager.activities.NavigationActivity"
         launcher:screen="3"
         launcher:x="0"
-        launcher:y="0" />
+        launcher:y="0" />  -->
 </favorites>
