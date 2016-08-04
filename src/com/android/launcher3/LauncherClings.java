@@ -117,61 +117,6 @@ class LauncherClings implements OnClickListener {
     }
 
     public void showLongPressCling(boolean showWelcome) {
-        ViewGroup root = (ViewGroup) mLauncher.findViewById(R.id.launcher);
-        View cling = mInflater.inflate(R.layout.longpress_cling, root, false);
-
-        cling.setOnLongClickListener(new OnLongClickListener() {
-
-            @Override
-            public boolean onLongClick(View v) {
-                mLauncher.getWorkspace().enterOverviewMode();
-                dismissLongPressCling();
-                return true;
-            }
-        });
-
-        final ViewGroup content = (ViewGroup) cling.findViewById(R.id.cling_content);
-        mInflater.inflate(showWelcome ? R.layout.longpress_cling_welcome_content
-                : R.layout.longpress_cling_content, content);
-        content.findViewById(R.id.cling_dismiss_longpress_info).setOnClickListener(this);
-
-        if (TAG_CROP_TOP_AND_SIDES.equals(content.getTag())) {
-            Drawable bg = new BorderCropDrawable(mLauncher.getResources().getDrawable(R.drawable.cling_bg),
-                    true, true, true, false);
-            content.setBackground(bg);
-        }
-
-        root.addView(cling);
-
-        if (showWelcome) {
-            // This is the first cling being shown. No need to animate.
-            return;
-        }
-
-        // Animate
-        content.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
-
-            @Override
-            public void onGlobalLayout() {
-                content.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-
-                ObjectAnimator anim;
-                if (TAG_CROP_TOP_AND_SIDES.equals(content.getTag())) {
-                    content.setTranslationY(-content.getMeasuredHeight());
-                    anim = LauncherAnimUtils.ofFloat(content, "translationY", 0);
-                } else {
-                    content.setScaleX(0);
-                    content.setScaleY(0);
-                    PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 1);
-                    PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 1);
-                    anim = LauncherAnimUtils.ofPropertyValuesHolder(content, scaleX, scaleY);
-                }
-
-                anim.setDuration(SHOW_CLING_DURATION);
-                anim.setInterpolator(new LogDecelerateInterpolator(100, 0));
-                anim.start();
-            }
-        });
     }
 
     private void dismissLongPressCling() {
