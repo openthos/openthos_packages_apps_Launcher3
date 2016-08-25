@@ -61,7 +61,7 @@ LOCAL_PROTOC_OPTIMIZE_TYPE := nano
 LOCAL_PROTOC_FLAGS := --proto_path=$(LOCAL_PATH)/protos/
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := launcher_protoutil_lib
+LOCAL_MODULE := launcher_protoutil_lib_old
 LOCAL_IS_HOST_MODULE := true
 LOCAL_JAR_MANIFEST := util/etc/manifest.txt
 LOCAL_STATIC_JAVA_LIBRARIES := host-libprotobuf-java-2.3.0-nano
@@ -75,11 +75,11 @@ include $(CLEAR_VARS)
 LOCAL_IS_HOST_MODULE := true
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := launcher_protoutil
+LOCAL_MODULE := launcher_protoutil_old
 
 include $(BUILD_SYSTEM)/base_rules.mk
 
-$(LOCAL_BUILT_MODULE): launcher_protoutil_lib
+$(LOCAL_BUILT_MODULE): launcher_protoutil_lib_old
 $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/util/etc/launcher_protoutil | $(ACP)
 	@echo "Copy: $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-new-target)
